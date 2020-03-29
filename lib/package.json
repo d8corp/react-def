@@ -1,0 +1,30 @@
+{
+  "name": "react-def",
+  "version": "1.0.0-rc2",
+  "description": "Deferring of components rendering",
+  "main": "index.js",
+  "module": "index.es6.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/d8corp/react-def.git"
+  },
+  "keywords": [
+    "react",
+    "performance",
+    "async",
+    "defer",
+    "async",
+    "timeout",
+    "render"
+  ],
+  "author": "Mikhail Lysikov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/d8corp/react-def/issues"
+  },
+  "homepage": "https://github.com/d8corp/react-def",
+  "dependencies": {
+    "prop-types": "*",
+    "react": "*"
+  }
+}
