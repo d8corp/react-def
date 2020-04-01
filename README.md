@@ -55,13 +55,13 @@ const DefComponent = () => (
 )
 ```
 Try to use the `SimpleComponent` and the `DefComponent` and you see the difference.  
-Also, you can provide property of the `element` or the `component` to show something wile it's rendering.
+Also, you can provide property of the `placeholder` to show something wile it's rendering.
 ```typescript jsx
 const DefComponentPredefine = () => (
   <div>
     {[...new Array(10)].map((v, i) => (
       <div key={i}>
-        <Def element='loading...'>
+        <Def placeholder='loading...'>
           {[...new Array(10)].map((v, j) => (
             <Throttling key={j}>
               ({i}.{j})

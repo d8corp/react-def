@@ -1,6 +1,6 @@
 {
   "name": "react-def",
-  "version": "1.0.0-rc2",
+  "version": "1.0.0-rc3",
   "description": "Deferring of the components rendering",
   "main": "index.js",
   "module": "index.es6.js",

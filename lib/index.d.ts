@@ -1,18 +1,16 @@
-import { Component, ReactNode, ComponentType } from 'react';
+import { Component, ReactNode } from 'react';
 import PropTypes from 'prop-types';
 export declare type DefProps = {
     children: ReactNode;
-    element?: ReactNode;
-    component?: ComponentType;
+    placeholder?: ReactNode;
 };
 export default class Def extends Component<DefProps> {
     static propTypes: {
         children: PropTypes.Validator<PropTypes.ReactNodeLike>;
-        element: PropTypes.Requireable<PropTypes.ReactNodeLike>;
-        component: PropTypes.Requireable<PropTypes.ReactElementLike>;
+        placeholder: PropTypes.Requireable<PropTypes.ReactNodeLike>;
     };
     static defaultProps: {
-        element: any;
+        placeholder: any;
     };
     static timer: number;
     static currentDef: Def;
@@ -20,5 +18,5 @@ export default class Def extends Component<DefProps> {
     static start(): void;
     static render(): void;
     componentWillUnmount(): void;
-    render(): {};
+    render(): ReactNode;
 }

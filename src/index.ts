@@ -1,29 +1,26 @@
-import React, {Component, ReactNode, ComponentType} from 'react'
+import {Component, ReactNode} from 'react'
 import PropTypes from 'prop-types'
 
 const date = 'performance' in window ? window.performance : Date
 
 export type DefProps = {
   children: ReactNode,
-  element?: ReactNode,
-  component?: ComponentType
+  placeholder?: ReactNode
 }
 
 export default class Def extends Component<DefProps> {
   static propTypes = {
     children: PropTypes.node.isRequired,
-    element: PropTypes.node,
-    component: PropTypes.element,
+    placeholder: PropTypes.node
   }
   static defaultProps = {
-    element: null
+    placeholder: null
   }
   static timer: number
   static currentDef: Def
   static stack: Set<Def> = new Set()
   static start () {
     if (!this.timer && this.stack.size) {
-      // @ts-ignore
       this.timer = setTimeout(() => {
         const redLine = date.now() + 17
         while (this.stack.size && date.now() < redLine) {
@@ -53,6 +50,6 @@ export default class Def extends Component<DefProps> {
     }
     Def.stack.add(this)
     Def.start()
-    return this.props.component ? React.createElement(this.props.component) : this.props.element
+    return this.props.placeholder
   }
 }

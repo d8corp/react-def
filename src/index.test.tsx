@@ -21,7 +21,7 @@ describe('Def', () => {
   })
   test('predefine', async () => {
     const div = render(
-      <Def element='loading...'>
+      <Def placeholder='loading...'>
         test
       </Def>
     )
