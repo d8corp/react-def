@@ -33,10 +33,10 @@ export default class Def extends Component<DefProps> {
   }
   static render () {
     if (this.stack.size) {
-      const Async = this.stack.values().next().value
-      this.currentDef = Async
-      this.stack.delete(Async)
-      Async.forceUpdate()
+      const nextDef = this.stack.values().next().value
+      this.currentDef = nextDef
+      this.stack.delete(nextDef)
+      nextDef.forceUpdate()
     } else {
       this.currentDef = undefined
     }
