@@ -1,12 +1,11 @@
 # react-def
+[![NPM](https://img.shields.io/npm/v/react-def.svg)](https://www.npmjs.com/package/react-def) [![NPM](https://img.shields.io/npm/dm/react-def.svg)](https://www.npmjs.com/package/react-def)  
+
 Use the component when DOM changes or component rendering take a lot of time.
 ## Installation
-[npm](https://www.npmjs.com/package/react-def)
 ```bash
 npm i react-def
-```
-yarn
-```bash
+# or
 yarn add react-def
 ```
 ## Using
@@ -15,6 +14,8 @@ The rendering of the components starts working only when the whole app will be r
 Then `Def` components will render one by one as quickly as we can have `60fps`.
 ```typescript jsx
 import Def from 'react-def'
+const TEN = [...new Array(10)]
+
 
 const Throttling = ({value = 10, children}) => {
   const end = Date.now() + value
@@ -26,9 +27,9 @@ const Throttling = ({value = 10, children}) => {
 
 const SimpleComponent = () => (
   <div>
-    {[...new Array(10)].map((v, i) => (
+    {TEN.map((v, i) => (
       <div key={i}>
-        {[...new Array(10)].map((v, j) => (
+        {TEN.map((v, j) => (
           <Throttling key={j}>
             ({i}.{j})
           </Throttling>
@@ -40,10 +41,10 @@ const SimpleComponent = () => (
 
 const DefComponent = () => (
   <div>
-    {[...new Array(10)].map((v, i) => (
+    {TEN.map((v, i) => (
       <div key={i}>
         <Def>
-          {[...new Array(10)].map((v, j) => (
+          {TEN.map((v, j) => (
             <Throttling key={j}>
               ({i}.{j})
             </Throttling>
@@ -59,10 +60,10 @@ Also, you can provide property of the `placeholder` to show something wile it's 
 ```typescript jsx
 const DefComponentPredefine = () => (
   <div>
-    {[...new Array(10)].map((v, i) => (
+    {TEN.map((v, i) => (
       <div key={i}>
         <Def placeholder='loading...'>
-          {[...new Array(10)].map((v, j) => (
+          {TEN.map((v, j) => (
             <Throttling key={j}>
               ({i}.{j})
             </Throttling>
