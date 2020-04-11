@@ -19,11 +19,14 @@
   "keywords": [
     "react",
     "performance",
-    "async",
+    "def",
     "defer",
     "async",
     "timeout",
-    "render"
+    "render",
+    "postpone",
+    "delay",
+    "front-end"
   ],
   "author": "Mikhail Lysikov",
   "license": "MIT",
