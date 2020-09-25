@@ -1,5 +1,7 @@
 # react-def
-[![NPM](https://img.shields.io/npm/v/react-def.svg)](https://www.npmjs.com/package/react-def) [![NPM](https://img.shields.io/npm/dm/react-def.svg)](https://www.npmjs.com/package/react-def)  
+[![NPM](https://img.shields.io/npm/v/react-def.svg)](https://www.npmjs.com/package/react-def)
+[![NPM](https://img.shields.io/npm/dm/react-def.svg)](https://www.npmjs.com/package/react-def)
+[![license](https://img.shields.io/npm/l/html-classes)](https://github.com/d8corp/react-def/blob/master/LICENSE)  
 
 Use the component when DOM changes or component rendering take a lot of time.
 ## Installation
@@ -63,6 +65,24 @@ const DefComponentPredefine = () => (
     {TEN.map((v, i) => (
       <div key={i}>
         <Def placeholder='loading...'>
+          {TEN.map((v, j) => (
+            <Throttling key={j}>
+              ({i}.{j})
+            </Throttling>
+          ))}
+        </Def>
+      </div>
+    ))}
+  </div>
+)
+```
+If you wanna defer the rendering only once use `once` property.
+```typescript jsx
+const DefComponentPredefine = () => (
+  <div>
+    {TEN.map((v, i) => (
+      <div key={i}>
+        <Def once>
           {TEN.map((v, j) => (
             <Throttling key={j}>
               ({i}.{j})

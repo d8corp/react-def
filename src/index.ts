@@ -4,8 +4,9 @@ import PropTypes from 'prop-types'
 const date = 'performance' in window ? window.performance : Date
 
 export type DefProps = {
-  children: ReactNode,
+  children: ReactNode
   placeholder?: ReactNode
+  once?: boolean
 }
 
 export default class Def extends Component<DefProps> {
@@ -41,11 +42,16 @@ export default class Def extends Component<DefProps> {
       this.currentDef = undefined
     }
   }
+  displayed: boolean
   componentWillUnmount () {
     Def.stack.delete(this)
   }
   render () {
+    if (this.props.once && this.displayed) {
+      return this.props.children
+    }
     if (Def.currentDef === this) {
+      this.displayed = true
       return this.props.children
     }
     Def.stack.add(this)

@@ -1,6 +1,6 @@
 {
   "name": "react-def",
-  "version": "1.0.0-rc4",
+  "version": "1.0.0",
   "description": "Deferring of the components rendering",
   "main": "index.js",
   "module": "index.es6.js",
@@ -20,7 +20,7 @@
     "delay",
     "front-end"
   ],
-  "author": "Mikhail Lysikov",
+  "author": "Mikhail Lysikov <d8corp@mail.ru>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/d8corp/react-def/issues"

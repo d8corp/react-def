@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 export declare type DefProps = {
     children: ReactNode;
     placeholder?: ReactNode;
+    once?: boolean;
 };
 export default class Def extends Component<DefProps> {
     static propTypes: {
@@ -17,6 +18,7 @@ export default class Def extends Component<DefProps> {
     static stack: Set<Def>;
     static start(): void;
     static render(): void;
+    displayed: boolean;
     componentWillUnmount(): void;
     render(): ReactNode;
 }
